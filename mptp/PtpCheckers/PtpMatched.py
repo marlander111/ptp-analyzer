@@ -198,7 +198,7 @@ class PtpMatched:
                 )
 
     def _msg_sequence_and_time_info(self, msg: PTPv2) -> str:
-        t = time.strftime("%H:%M:%S", time.localtime(msg.time))
+        t = time.strftime("%H:%M:%S", time.localtime(int(msg.time)))
         return (
             f"   Capture time: {t},    Capture offset: {msg.time-self.time_offset:.9f},"
             f"\tSequence ID: {msg.sequenceId}"

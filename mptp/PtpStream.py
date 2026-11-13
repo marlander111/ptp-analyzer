@@ -54,7 +54,7 @@ class PtpStream:
 
     def _add_time_data(self, pkt: PTPv2):
         self._time_offset = pkt[0].time
-        self._pcap_start_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(pkt[0].time))
+        self._pcap_start_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(int(pkt[0].time)))
 
     @staticmethod
     def _cut_boundaries(raw_ptp_list: List[PTPv2]):

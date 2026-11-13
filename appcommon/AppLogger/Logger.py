@@ -161,7 +161,7 @@ class Logger(ILogger):
             return False
 
     def _get_str_for_timing_log(self, msg, time_offset: float) -> str:
-        t = time.strftime("%H:%M:%S", time.localtime(msg.time))
+        t = time.strftime("%H:%M:%S", time.localtime(int(msg.time)))
         return (
             f"Capture time: {t},\tCapture offset: {msg.time-time_offset:.9f},\t"
             f"Sequence ID: {msg.sequenceId}"

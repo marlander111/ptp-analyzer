@@ -17,7 +17,7 @@ class Analyser:
         self._config: ConfigReader = config
         self._ptp_stream: PtpStream = ptp_stream
         if len(ptp_stream.ptp_total) > 0:
-            t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(ptp_stream.ptp_total[0].time))
+            t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(int(ptp_stream.ptp_total[0].time)))
             self._logger.info(f"Pcap started at: {t}")
         self._logger.banner_small("counted messages")
         self._logger.info(self._ptp_stream.__repr__())

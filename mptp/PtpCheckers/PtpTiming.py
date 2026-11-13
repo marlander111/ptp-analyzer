@@ -189,7 +189,7 @@ class PtpTiming:
         return (ns, ns_next)
 
     def _msg_sequence_and_time_info(self, msg):
-        t = time.strftime("%H:%M:%S", time.localtime(msg.time))
+        t = time.strftime("%H:%M:%S", time.localtime(int(msg.time)))
         return f"[TIME] Capture time: {t},\tCapture offset: {msg.time-self._time_offset:.9f},\tSequence ID: {msg.sequenceId}"
 
     def _is_input_valid(self):

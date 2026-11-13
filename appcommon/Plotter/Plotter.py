@@ -70,7 +70,7 @@ class Plotter:
     def _set_grid_and_scale_for_timings(self, ax):
         ax.grid(linestyle='--', which='minor', alpha=0.4)
         ax.grid(linestyle='--', which='major', alpha=0.7)
-        ax.set_yscale('log')
+#        ax.set_yscale('log')
         
     def _get_range(self, x):
         return (round(min(x.capture_rates), 3), round(max(x.capture_rates), 3)) 
